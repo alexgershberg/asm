@@ -1,2 +1,7 @@
-all:
-	nasm -f elf64 hello.asm && ld hello.o -o hello
+BIN_DIR 		:= bin
+
+
+hello:	
+	nasm -f elf64 $@.asm -o $(BIN_DIR)/$@.o && ld $(BIN_DIR)/$@.o -o $@
+
+
